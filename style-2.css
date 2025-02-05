@@ -1,6 +1,7 @@
 .container {
   background-color: var(--white);
   color: var(--black);
+  min-height: 70vh;
 }
 .devinfo {
   display: flex;

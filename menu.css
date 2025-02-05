@@ -102,6 +102,11 @@
   transition: all 0.3s ease;
   opacity: 0.7;
 }
+.theme-wrapper{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
 .theme-cta {
   width: 42px;
   height: 16px;
@@ -132,6 +137,8 @@
 
 .smlinks{
   display: flex;
+  justify-content: center;
+  padding: 2rem;
   gap: 10px;
 }
 

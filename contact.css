@@ -21,9 +21,8 @@ input {
     background-color: var(--white-06);
   }
   .submit-cta {
-    display: flex;
-    align-items: center;
     margin-top: 2rem;
+    width: fit-content;
   }
   .submit-cta span {
     display: inline-block;
@@ -39,6 +38,7 @@ input {
   }
   input[type="submit"] {
     width: auto;
+    margin: 0;
     padding: 0;
     background-color: transparent;
     color: var(--black);
@@ -46,10 +46,10 @@ input {
     cursor: pointer;
     font-size: 18px;
     font-family: var(--primary-font);
-    font-weight: 600;
+    font-weight: 500;
   }
   .wrapper1 {
-    height: 100vh;
+    height: 70vh;
     margin: auto;
     /* padding: 0px 12rem; */
     display: flex;
@@ -68,6 +68,7 @@ input {
     color: var(--black);
     width: 100%;
     font-size: 3.5rem;
+    font-weight: 400;
     line-height: 100%;
     font-family: var(--primary-font);
     -webkit-user-select: none;
