@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@200,201,300,301,400,401,500,501,600,601,700,701,800,801,900&display=swap");
 
 html {
-  --primary-font: "Figtree", "Nohemi", "sans serif";
+  --primary-font: "Switzer", "Nohemi", "sans serif";
   --handwriting-font: "Caveat";
   --white: #fdfdfd;
   --black: #050505;
@@ -89,9 +90,24 @@ img {
   }
   span {
     a:hover {
-      color: var(--blue);
+      color: var(--black);
     }
   }
+}
+
+.tab-bar{
+  color: var(--white-06);
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top:2rem;
+  left: 0;
+  right: 0;
+  gap:2rem;
+  
+
 }
 .name {
   color: var(--black);
