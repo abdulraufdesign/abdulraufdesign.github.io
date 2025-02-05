@@ -75,7 +75,7 @@ function revealProjects() {
   for (var i = 0; i < projects.length; i++){
     var windowHeight = window.innerHeight;
     var revealTop = projects[i].getBoundingClientRect().top;
-    var revealPoint = 200; 
+    var revealPoint = 80; 
 
     if(revealTop < windowHeight - revealPoint){
         projects[i].classList.add('reveal');

@@ -3,7 +3,7 @@
 @import url("https://api.fontshare.com/v2/css?f[]=switzer@200,201,300,301,400,401,500,501,600,601,700,701,800,801,900&display=swap");
 
 html {
-  --primary-font: "Switzer", "Nohemi", "sans serif";
+  --primary-font: "Switzer", "Figtree", "sans serif";
   --handwriting-font: "Caveat";
   --white: #fdfdfd;
   --black: #050505;
@@ -111,16 +111,35 @@ img {
 }
 .name {
   color: var(--black);
-  font-size: calc(84px + 2vw);
-  font-weight: 700;
+  font-size: calc(48px + 2vw);
+  font-weight: 400;
+  text-align: center;
   line-height: 110%;
   letter-spacing: var(--letter-spacing);
   user-select: none;
   position: relative;
 }
+
+.ctas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.get-in-touch{
+  font-size: 18px;
+  padding-bottom: 4px;
+  border-bottom: 2px dashed var(--black);
+  transition: opacity 0.3s ease;
+}
+.get-in-touch:hover{
+  opacity: 0.8;
+}
+
 .faded-p {
   color: var(--white-05);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
   width: 40ch;
@@ -190,7 +209,7 @@ i.ph-bold, i.ph, i.ph-fill{
   strong{
     color: #fafafa;
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 500;
   }
   p{
     color: #858585;
@@ -213,6 +232,7 @@ a:has(.project-sec){
 }
 .proj-wrapper{
   padding: 2rem 10rem;
+  margin-bottom: 4rem;
   background-color: var(--white);
 }
 .proj-wrapper #proj--sec{
@@ -258,6 +278,7 @@ a:has(.project-sec){
   letter-spacing: var(--letter-spacing);
   color: #fafafa;
   font-size: 2rem;
+  font-weight: 600;
 }
 .tags {
   display: flex;
