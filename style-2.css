@@ -1,20 +1,3 @@
-
-#surprise-txt-temp{
-  font-family: var(--handwriting-font);
-  font-weight: 400;
-  font-size: 20px;
-  width: 12ch;
-  position: absolute;
-  right: 12rem;
-  top: 6rem;
-  transform: rotate(-24deg);
-}
-#surprise-txt-temp > i{
-  position: relative;
-  transform: rotate(32deg);
-  right: -56px;
-  top: -24px;
-}
 .container {
   background-color: var(--white);
   color: var(--black);
@@ -40,6 +23,7 @@ h1.exp-h1 {
 .head-email-box {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: 24ch;
+  z-index: 5;
 }
 .head-email-box > a {
   position: relative;

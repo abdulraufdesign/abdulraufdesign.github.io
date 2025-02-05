@@ -106,11 +106,12 @@
   width: 42px;
   height: 16px;
   border-radius: 100px;
-  background-color: var(--black);
+  background-color: var(--white-08);
   padding: 6px;
   cursor: pointer;
   transition: all 0.3s ;
   position: relative;
+  z-index: 5;
 }
 .theme-cta::before {
   content: "";
@@ -118,13 +119,14 @@
   width: 16px;
   height: 16px;
   border-radius: 50px;
-  background-color: #fafafa;
+  background-color: var(--white-06);
   transition: all 0.3s;
 }
 .theme-cta.dark{
   background-color: var(--blue);
 }
 .theme-cta.dark::before{
+  background-color: #fff;
   transform: translateX(26px);
 }
 
