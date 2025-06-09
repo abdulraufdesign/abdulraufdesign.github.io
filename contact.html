@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-2.css">
@@ -61,7 +62,7 @@
         <div class="wrapper1">
             <div class="devinfo1">
                 <h1 class="contact">Let's get started!</h1>
-                <form action="https://formsubmit.co/a26282fbeba7a3efde27869d46daae7f" method="POST">
+                <form action="https://send.pageclip.co/Ch4fDYNovUUZj0Iq0wtjGgqvpeAxbXc7/contact-form" class="pageclip-form" method="POST">
                     <div class="wrapper2">
                         <p class="contact-p">Greetings, my name is <input type="text" id="name" placeholder="Your name" name="name" required>
                             and I have a <input type="text" id="client-issue" placeholder="website, job, project, etc" name="Problem" required>
@@ -69,13 +70,14 @@
                             me at <input type="email" id="email" placeholder="Your email address" name="email" required> to get things
                             started.</p>
                     </div>
-                    <div class="get-in-touch submit-cta">
-                        <input type="submit" value="Send info">
-                    </div>
+                    <button type="submit" class="pageclip-form__submit">
+                        <span class="get-in-touch submit-cta">Send info</span>
+                    </button>
                 </form>
             </div>
         </div>
     </div>
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     <script src="script.js"></script>
     <script src="media.js"></script>
 </body>
