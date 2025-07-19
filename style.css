@@ -235,6 +235,9 @@ a:has(.project-sec){
   padding: 2rem 10rem;
   margin-bottom: 4rem;
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
 }
 .proj-wrapper #proj--sec{
   display: flex;
@@ -249,7 +252,6 @@ a:has(.project-sec){
   border-radius: 24px;
   overflow: hidden;
   color: #fafafa;
-  margin-bottom: 8rem;
   opacity: 0;
   transform: translateY(100px);
   .faded-p{
