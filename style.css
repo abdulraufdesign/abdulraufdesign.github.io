@@ -305,16 +305,19 @@ a:has(.project-sec){
   width: 100%;
 }
 .proj-redirect span{
-  width: 100%;
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--blue);
+  color: var(--black);
   text-transform: uppercase;
   font-weight: 500;
   font-size: 20px;
 }
-
+.proj-redirect {
+  width: fit-content;
+  align-self: center;
+}
 .proj-cta{
   font-size: 20px;
   font-weight: 500;
