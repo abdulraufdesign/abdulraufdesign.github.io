@@ -1,0 +1,46 @@
+/* --- 1. Page Load Animation for Socials & Button --- */
+
+/* Mask container for social icons */
+.smlinks-mask, .ctas {
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Initial State: Pushed down */
+.smlinks, .get-in-touch {
+    display: flex;
+    transform: translateY(120%); /* Hidden down */
+    opacity: 1; /* No fade */
+    animation: reveal-item 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-play-state: paused;
+}
+
+.smlinks { gap: 1rem; }
+
+/* Animation Keyframes */
+@keyframes reveal-item {
+    from { transform: translateY(120%); }
+    to { transform: translateY(0); }
+}
+
+/* Trigger on Load */
+body.page-loaded .smlinks {
+    animation-play-state: running;
+    animation-delay: 0.8s; /* Starts after the text */
+}
+
+body.page-loaded .get-in-touch {
+    animation-play-state: running;
+    animation-delay: 0.9s; /* Starts after socials */
+}
+
+/* --- 2. Social Icons Hover Animation --- */
+.social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Simple bounce up */
+    color: var(--white-06); /* Assuming you want a color shift */
+}

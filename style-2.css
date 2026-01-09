@@ -1,3 +1,5 @@
+@import "anim.css";
+
 .container {
   background-color: var(--white);
   color: var(--black);
@@ -9,6 +11,7 @@
   row-gap: 2rem;
   background-color: var(--white);
 }
+
 
 h1.abt-h1,
 h1.proj-h1,

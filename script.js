@@ -10,6 +10,11 @@ themeCta.addEventListener("click", () => {
 });
 
 window.addEventListener('scroll' , reveal);
+// Wait for the entire page (images, styles, etc.) to load
+window.addEventListener('load', () => {
+    // Add the class 'page-loaded' to the body
+    document.body.classList.add('page-loaded');
+});
 
 var connectIcons = document.querySelectorAll('.connect-icon');
 var connectTexts = document.querySelector('.connect-txt');

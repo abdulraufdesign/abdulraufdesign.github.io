@@ -24,6 +24,7 @@ html {
   letter-spacing: -0.020em;
   transition: all 0.3s;
 }
+
 html.second {
   --white: #050505;
   --black: #fafafa;
@@ -35,26 +36,32 @@ html.second {
   --white-08: #181818;
   --black-08: rgba(0, 0, 0, 0.2);
 }
+
 ::selection {
   color: #000;
   background-color: pink;
 }
+
 ::-webkit-scrollbar {
   background-color: transparent;
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: var(--white);
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--white-03);
   width: 8px;
 }
+
 * {
   margin: 0px;
   padding: 0px;
   transition: 0.1s;
 }
+
 body {
   font-family: var(--primary-font);
   background-color: var(--white);
@@ -64,12 +71,14 @@ a {
   display: flex;
   text-decoration: none;
   color: inherit;
-  transition: 0.3s ;
+  transition: 0.3s;
 }
+
 button {
   font-family: var(--primary-font);
   outline: none;
 }
+
 img {
   pointer-events: none;
 }
@@ -85,9 +94,11 @@ img {
   letter-spacing: var(--letter-spacing);
   background-color: var(--white);
   color: var(--black);
-  strong{
+
+  strong {
     width: 24ch;
   }
+
   span {
     a:hover {
       color: var(--black);
@@ -95,20 +106,21 @@ img {
   }
 }
 
-.tab-bar{
+.tab-bar {
   color: var(--white-06);
   position: absolute;
   z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  top:2rem;
+  top: 2rem;
   left: 0;
   right: 0;
-  gap:2rem;
-  
+  gap: 2rem;
+
 
 }
+
 .name {
   color: var(--black);
   font-size: calc(48px + 2vw);
@@ -120,21 +132,22 @@ img {
   position: relative;
 }
 
-.ctas{
+.ctas {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.get-in-touch{
+.get-in-touch {
   color: var(--black);
   font-size: 18px;
   padding-bottom: 4px;
   border-bottom: 2px dashed var(--black);
   transition: opacity 0.3s ease;
 }
-.get-in-touch:hover{
+
+.get-in-touch:hover {
   opacity: 0.8;
 }
 
@@ -150,13 +163,73 @@ img {
   position: relative;
   clip-path: polygon(0 0, 120% 0, 120% 120%, 0% 120%);
 }
-.line > * {
+
+.line>* {
   transform: translateY(120%);
 }
 
-i.ph-bold, i.ph, i.ph-fill{
+
+/* 1. The Mask Container: Hides the text when it is "down" */
+.text-mask {
+  display: block;
+  /* Forces each mask to be a new line (replaces <br>) */
+  overflow: hidden;
+  /* Clips the text so it looks like it's rising from nowhere */
+  line-height: 1.2;
+  /* Adjust to match your font sizing */
+  margin-bottom: 5px;
+  /* Optional spacing between lines */
+}
+
+/* 2. The Text Element: Starts pushed down */
+.text-animate {
+  display: block;
+  /* Ensures transform works correctly */
+  transform: translateY(110%);
+  /* Pushed down 110% out of view initially */
+  opacity: 1;
+  /* NO FADE as requested */
+
+  /* Define the animation but keep it paused initially */
+  animation: reveal-text 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-play-state: paused;
+}
+
+/* 3. The Animation Keyframes */
+@keyframes reveal-text {
+  0% {
+    transform: translateY(110%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 4. Trigger Class: Added by JS to start animation */
+body.page-loaded .text-animate {
+  animation-play-state: running;
+}
+
+/* 5. Staggering: Delays for each line */
+.text-mask:nth-child(1) .text-animate {
+  animation-delay: 0.2s;
+}
+
+.text-mask:nth-child(2) .text-animate {
+  animation-delay: 0.4s;
+}
+
+.text-mask:nth-child(3) .text-animate {
+  animation-delay: 0.6s;
+}
+
+i.ph-bold,
+i.ph,
+i.ph-fill {
   font-size: 24px;
 }
+
 .cta {
   cursor: pointer;
   background: var(--black);
@@ -170,8 +243,9 @@ i.ph-bold, i.ph, i.ph-fill{
   font-weight: 500;
   padding: 12px 24px;
   font-size: 18px;
-  transition-timing-function:  cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .primary-cta:hover,
 .primary-cta:active {
   background-color: var(--white-08);
@@ -184,16 +258,20 @@ i.ph-bold, i.ph, i.ph-fill{
   background-color: #fafafa;
   color: #050505;
 }
+
 .contact-cta:hover,
 .contact-cta:active {
   background-color: #181818;
   color: #fafafa;
 }
+
 .secondary-cta {
   background: var(--white);
   color: var(--black);
   width: fit-content;
-  &:hover, &:active{
+
+  &:hover,
+  &:active {
     background-color: var(--white-08);
   }
 }
@@ -205,14 +283,17 @@ i.ph-bold, i.ph, i.ph-fill{
   justify-content: space-between;
   align-items: center;
 }
+
 .contact-head {
   width: 50%;
-  strong{
+
+  strong {
     color: #fafafa;
     font-size: 3rem;
     font-weight: 500;
   }
-  p{
+
+  p {
     color: #858585;
     margin-top: 1rem;
   }
@@ -228,10 +309,12 @@ i.ph-bold, i.ph, i.ph-fill{
   background-color: var(--white);
   gap: 0px;
 }
-a:has(.project-sec){
+
+a:has(.project-sec) {
   display: block;
 }
-.proj-wrapper{
+
+.proj-wrapper {
   padding: 2rem 10rem;
   margin-bottom: 4rem;
   background-color: var(--white);
@@ -239,13 +322,15 @@ a:has(.project-sec){
   flex-direction: column;
   gap: 8rem;
 }
-.proj-wrapper #proj--sec{
+
+.proj-wrapper #proj--sec {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 2rem;
 }
+
 .project-sec {
   position: relative;
   background-color: #111111;
@@ -254,12 +339,13 @@ a:has(.project-sec){
   color: #fafafa;
   opacity: 0;
   transform: translateY(100px);
-  .faded-p{
+
+  .faded-p {
     color: rgba(255, 255, 255, 0.6);
   }
 }
 
-.project-sec.reveal{
+.project-sec.reveal {
   animation: revealProject;
   animation-duration: 0.4s;
   animation-timing-function: ease;
@@ -268,33 +354,38 @@ a:has(.project-sec){
 }
 
 @keyframes revealProject {
-  from{
+  from {
     opacity: 0;
     transform: translateY(100px);
   }
-  to{
+
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.proj-h2{
+
+.proj-h2 {
   letter-spacing: var(--letter-spacing);
   color: #fafafa;
   font-size: 2rem;
   font-weight: 600;
 }
+
 .tags {
   display: flex;
   gap: 8px;
   font-size: 14px;
   margin-bottom: 12px;
 }
-.tag{
+
+.tag {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 8px 14px;
   border-radius: 4px;
 }
-.projcontainer{
+
+.projcontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -304,7 +395,8 @@ a:has(.project-sec){
   height: 500px;
   width: 100%;
 }
-.proj-redirect span{
+
+.proj-redirect span {
   width: fit-content;
   display: flex;
   align-items: center;
@@ -314,20 +406,24 @@ a:has(.project-sec){
   font-weight: 500;
   font-size: 20px;
 }
+
 .proj-redirect {
   width: fit-content;
   align-self: center;
 }
-.proj-cta{
+
+.proj-cta {
   font-size: 20px;
   font-weight: 500;
   background-color: transparent;
   border-color: #343434;
 }
-.proj-cta:hover{
+
+.proj-cta:hover {
   color: black;
   background-color: white;
 }
+
 .proj-img {
   position: absolute;
   top: 15%;
@@ -341,16 +437,18 @@ a:has(.project-sec){
   -webkit-user-select: none;
 }
 
-.connect-container{
+.connect-container {
   background-color: #050505;
   padding: 0rem 10rem;
 }
-.connect-container .connect-wrapper{
+
+.connect-container .connect-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
 }
+
 button.connect-cta {
   font-family: var(--primary-font);
   background-color: #050505;
@@ -364,14 +462,16 @@ button.connect-cta {
   cursor: pointer;
   position: relative;
   transition: 0.3s;
-
 }
-.connect-wrapper .txt-blck{
+
+.connect-wrapper .txt-blck {
   color: #858585;
 }
-strong{
+
+strong {
   font-weight: inherit;
 }
+
 .connect-icons {
   width: 100%;
   position: absolute;
@@ -381,34 +481,38 @@ strong{
   justify-content: flex-end;
   gap: 4%;
 }
-.connect-icons a{
+
+.connect-icons a {
   color: #fafafa;
   transform: translateY(100%);
-  transition: .3s cubic-bezier(0.33, 1, 0.68, 1); 
+  transition: .3s cubic-bezier(0.33, 1, 0.68, 1);
 }
-.connect-txt{
+
+.connect-txt {
   color: #050505;
   display: inline-block;
   transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 1.5s;
 
 }
-.connect-icons a:nth-child(1){
+
+.connect-icons a:nth-child(1) {
   transition-delay: 0.5s;
 }
-.connect-icons a:nth-child(2){
+
+.connect-icons a:nth-child(2) {
   transition-delay: calc(60ms + 0.5s);
 }
-.connect-icons a:nth-child(3){
+
+.connect-icons a:nth-child(3) {
   transition-delay: calc(120ms + 0.5s);
 }
 
 .connect-txt.show,
-.connect-icon.show{
-    transform: translateY(-100%);
+.connect-icon.show {
+  transform: translateY(-100%);
 }
 
-.connect-icons i{
+.connect-icons i {
   font-size: 32px;
 }
-
