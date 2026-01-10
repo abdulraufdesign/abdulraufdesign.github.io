@@ -177,7 +177,7 @@ img {
   /* Clips the text so it looks like it's rising from nowhere */
   line-height: 1.2;
   /* Adjust to match your font sizing */
-  margin-bottom: 5px;
+  margin-bottom: -7px;
   /* Optional spacing between lines */
 }
 

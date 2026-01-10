@@ -3,7 +3,6 @@
 /* Mask container for social icons */
 .smlinks-mask, .ctas {
     overflow: hidden;
-    margin-top: 20px;
 }
 
 /* Initial State: Pushed down */
