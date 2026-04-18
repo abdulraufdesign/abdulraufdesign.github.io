@@ -670,7 +670,7 @@ p, b, em, a, button {
 }
 
 .anim {
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.8s var(--smooth-ease);
 }
 
 /* Scrollbar styling */
