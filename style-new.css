@@ -190,14 +190,9 @@ p, b, em, a, button {
 }
 
 .grid-item {
-    aspect-ratio: 1.2 / 1;
     background: var(--color-gray-200);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.grid-item:hover {
-    transform: scale(1.03);
+    border-radius: 32px;
+    transition: all 0.3s var(--smooth-ease);
 }
 
 .hero-content {
