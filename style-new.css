@@ -500,19 +500,19 @@ p, b, em, a, button {
     font-weight: 700;
     color: var(--color-black);
     margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    line-height: 1.1;
     letter-spacing: var(--letter-space);
 }
 
 .footer-email {
     font-size: 14px;
     line-height: 1.7;
-    color: var(--color-gray-600);
+    color: var(--color-gray-500);
     margin-bottom: 32px;
 }
 
 .footer-email a {
-    color: var(--color-gray-700);
+    color: var(--color-gray-500);
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s ease;
