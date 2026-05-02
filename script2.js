@@ -27,6 +27,9 @@ function menuInactive(){
 
 function initCarousel(card) {
     const track = card.querySelector('.project-card-carousel');
+
+    if (!track) return;
+    
     const slidesTrack = track.querySelector('.project-mockups');
     const prevBtn = track.querySelector('.prev-btn');
     const nextBtn = track.querySelector('.next-btn');

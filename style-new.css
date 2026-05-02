@@ -284,6 +284,9 @@ p, b, em, a, button {
 
 .project-card {
     position: relative;
+    >img {
+        border-radius: 32px;
+    }
 }
 
 .project-badge {
@@ -609,7 +612,7 @@ p, b, em, a, button {
         gap: 64px;
     }
 
-    .project-card-carousel, .project-mockups {
+    .project-card-carousel, .project-mockups, .project-card > img {
         aspect-ratio: 16/9;
         border-radius: 12px;
     }
