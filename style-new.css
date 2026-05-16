@@ -195,7 +195,6 @@ button {
     transition: all 0.3s var(--smooth-ease);
     animation: reveal-grid 0.4s var(--smooth-ease) forwards;
     animation-delay: 0.7s;
-    overflow: hidden;
     >.grid-item {
         height: 180px;
         min-width: 12px;
@@ -635,14 +634,6 @@ button {
    ============================ */
 
 @media (max-width: 1024px) {
-    .hero-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .hero-grid .grid-item:nth-child(n+5) {
-        display: none;
-    }
-
     .project-info {
         flex-direction: column;
     }
