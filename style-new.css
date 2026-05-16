@@ -667,10 +667,15 @@ button {
 
     .hero {
         padding: 0 24px;
+        &#tldr > .hero-grid{
+            display: none;
+        }
     }
 
     .hero-grid {
-        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-bottom: 32px;
     }
 
     .hero-title {
