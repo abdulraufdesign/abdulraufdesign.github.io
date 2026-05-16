@@ -66,7 +66,11 @@ ul {
     list-style: none;
 }
 
-p, b, em, a, button {
+p,
+b,
+em,
+a,
+button {
     letter-spacing: var(--paragraph-letter-space);
 }
 
@@ -112,6 +116,7 @@ p, b, em, a, button {
     border-radius: 8px;
     object-fit: cover;
     transition: all 0.4s var(--smooth-ease);
+
     &:hover {
         border-radius: 32px;
     }
@@ -174,7 +179,7 @@ p, b, em, a, button {
 
 .safe-area {
     height: calc(var(--nav-height) + 40px);
-}   
+}
 
 .hero {
     max-width: var(--max-width);
@@ -183,17 +188,80 @@ p, b, em, a, button {
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    display: flex;
     gap: 12px;
+    height: 0;
     margin-bottom: 48px;
+    transition: all 0.3s var(--smooth-ease);
+    animation: reveal-grid 0.4s var(--smooth-ease) forwards;
+    animation-delay: 0.7s;
+    overflow: hidden;
+    >.grid-item {
+        height: 180px;
+        min-width: 12px;
+        width: 48px;
+        background: var(--color-gray-200);
+        border-radius: 8px;
+        /* immediate on hover enter, delayed on hover leave */
+        transition: all 0.25s var(--smooth-ease) 0.3s;
+        overflow: hidden;
+        flex-shrink: 0;
+        > img,> video,> a > img, > a > video {
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+        }
+        &:hover {
+            transition-delay: 0s;
+            flex-grow: 1;
+        }
+        &.vibe-coded {
+            background-color: var(--color-gray-100);
+            flex-grow: 1;
+            padding: 42px;
+            >#claude-animated {
+                
+                transform: rotate(0deg);
+                animation: vibe-code 0.5s var(--smooth-ease) alternate infinite;
+                animation-delay: 1s;
+            }
+            >img {
+                height: 42px;
+                width: 42px;
+                display: inline;
+            }
+            >h4 {
+                color: var(--color-black);
+                font-size: 24px;
+                font-weight: 400;
+                >span {
+                    font-style: italic;
+                }
+            }
+        }
+    }
 }
 
-.grid-item {
-    background: var(--color-gray-200);
-    border-radius: 32px;
-    transition: all 0.3s var(--smooth-ease);
+@keyframes reveal-grid {
+    to {
+        height: 180px;
+    }
 }
+
+@keyframes vibe-code {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
 
 .hero-content {
     max-width: 900px;
@@ -284,6 +352,7 @@ p, b, em, a, button {
 
 .project-card {
     position: relative;
+
     >img {
         border-radius: 32px;
     }
@@ -332,13 +401,13 @@ p, b, em, a, button {
 }
 
 .carousel-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  pointer-events: none;
-  user-select: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    pointer-events: none;
+    user-select: none;
 }
 
 
@@ -387,7 +456,9 @@ p, b, em, a, button {
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.14);
     transition: all 0.2s ease;
 }
-.carousel-btn:hover, .case-study-cta:hover {
+
+.carousel-btn:hover,
+.case-study-cta:hover {
     background-color: rgba(0, 0, 0, 0.62);
 }
 
@@ -418,7 +489,7 @@ p, b, em, a, button {
     -webkit-backdrop-filter: blur(4px);
     padding: 10px;
     border-radius: 20px;
-        display: flex;
+    display: flex;
     align-items: center;
     gap: 6px;
 }
@@ -457,7 +528,8 @@ p, b, em, a, button {
 
 .project-description-left {
     flex: 1;
-    > p {
+
+    >p {
         font-size: clamp(18px, 1.8vw, 24px);
         font-weight: 500;
         letter-spacing: var(--letter-space);
@@ -598,9 +670,7 @@ p, b, em, a, button {
     }
 
     .hero-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        margin-bottom: 32px;
+        display: none;
     }
 
     .hero-title {
@@ -612,7 +682,9 @@ p, b, em, a, button {
         gap: 64px;
     }
 
-    .project-card-carousel, .project-mockups, .project-card > img {
+    .project-card-carousel,
+    .project-mockups,
+    .project-card>img {
         aspect-ratio: 16/9;
         border-radius: 12px;
     }
