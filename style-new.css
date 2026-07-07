@@ -187,23 +187,26 @@ button {
     padding: 0 40px 60px;
 }
 
-#tldr > .hero-grid {
+.hero-grid {
     display: flex;
     gap: 12px;
-    height: 0;
+    height: 240px;
     margin-bottom: 48px;
     transition: all 0.3s var(--smooth-ease);
-    animation: reveal-grid 0.4s var(--smooth-ease) forwards;
     animation-delay: 0.7s;
-    overflow: hidden;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     >.grid-item {
-        height: 180px;
+        height: 240px;
         min-width: 12px;
-        width: 48px;
+        width: 180px;
         background: var(--color-gray-200);
-        border-radius: 8px;
+        border-radius: 16px;
+        filter: brightness(0.98);
         /* immediate on hover enter, delayed on hover leave */
-        transition: all 0.25s var(--smooth-ease) 0.3s;
+        /* transition: all 0.25s var(--smooth-ease) 0.3s; */
         overflow: hidden;
         flex-shrink: 0;
         > img,> video,> a > img, > a > video {
@@ -211,13 +214,9 @@ button {
             width:100%;
             object-fit: cover;
         }
-        &:hover {
-            transition-delay: 0s;
-            flex-grow: 1;
-        }
         &.vibe-coded {
             background-color: var(--color-gray-100);
-            flex-grow: 1;
+            width: 300px;
             padding: 42px;
             >#claude-animated {
                 
@@ -239,12 +238,6 @@ button {
                 }
             }
         }
-    }
-}
-
-@keyframes reveal-grid {
-    to {
-        height: 180px;
     }
 }
 
@@ -658,18 +651,8 @@ button {
     }
 
     .hero {
-        padding: 0 24px;
-        &#tldr > .hero-grid{
-            display: none;
-        }
+        padding: 0 24px; 
     }
-
-    .hero-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        margin-bottom: 32px;
-    }
-
     .hero-title {
         font-size: 32px;
     }
@@ -677,6 +660,9 @@ button {
     .work-section {
         padding: 20px 24px 60px;
         gap: 64px;
+        .hero-grid{
+            display: none;
+        }
     }
 
     .project-card-carousel,
